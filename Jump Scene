@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class JumpScene : MonoBehaviour
 {
     // Start is called before the first frame update
+    // using UnityEngine.SceneManagement
+
     void Start()
     {
         Debug.Log("Scene 1");
