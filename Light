@@ -1,0 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Light : MonoBehaviour
+{
+    Light testLight;
+    // Start is called before the first frame update
+    void Start()
+    {
+        testLight = GetComponent<Light>();
+        testLight.color = Color.blue;
+        testLight.transform.position = new Vector3(0, 0, 0);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
