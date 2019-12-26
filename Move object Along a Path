@@ -1,0 +1,73 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MoveInPath : MonoBehaviour
+{
+    Vector3 loc;
+    int x = 0;
+    int y = 0;
+    int z = 0;
+
+    void updatexp()
+    {
+        x++;
+    }
+    void updateyp()
+    {
+        y++;
+    }
+    void updatexn()
+    {
+        x--;
+    }
+    void updateyn()
+    {
+        y--;
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+    void updateloc()
+    {
+        if ((x < 10) && (y == 0))
+        {
+
+            updatexp();
+        }
+        if ((x == 10) && (y < 10))
+        {
+
+            updateyp();
+
+
+        }
+        if ((y == 10) && (x > 0))
+        {
+
+            updatexn();
+
+        }
+        if ((x == 0) && (y > 0))
+        {
+
+            updateyn();
+
+        }
+    }
+
+
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        updateloc();
+        loc = new Vector3(x, y, z);
+        transform.position = loc;
+
+
+    }
+}
