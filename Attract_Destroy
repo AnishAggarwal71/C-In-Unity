@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class NewBehaviourScript : MonoBehaviour
+{
+    public GameObject a, b;
+    private attract att;
+
+    public Vector3 pos1, pos2;
+
+    public int c = 1;
+    // Start is called before the first frame update
+    void Start()
+    {
+        att = GetComponent<attract>();
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag=="Enemy")
+        {
+            Destroy(collision.gameObject);
+            if(c==0)
+            {
+                a = Instantiate(b, pos2, Quaternion.identity);
+            }
+            if(c==1)
+            {
+                a = Instantiate(b, pos2, Quaternion.identity);
+            }
+            att.attractedTO = a;
+            c++;
+            if(c>=2)
+            {
+                c = 0;
+            }
+        }
+    }
+
+}
