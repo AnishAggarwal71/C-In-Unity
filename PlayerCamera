@@ -1,0 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class NewBehaviourScript : MonoBehaviour
+{
+    GameObject playerObj;
+    Vector3 cameraOffset;
+
+    private void Start()
+    {
+        playerObj = GameObject.Find("Player");
+        cameraOffset = new Vector3(0, 2, -6);
+    }
+
+    private void Update()
+    {
+        transform.position = playerObj.transform.position + cameraOffset;
+    }
+
+}
