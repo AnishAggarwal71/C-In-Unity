@@ -1,0 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Audio : MonoBehaviour
+{
+  public AudioSource Sound;
+  void Update()
+  {
+    if(Input.GetKey(KeyCode.Space))
+    {
+      Sound = GetComponent<AudioSource>();
+      Sound.Play(0):
+      Debug.Log("Started");
+    }
+  }
+}
