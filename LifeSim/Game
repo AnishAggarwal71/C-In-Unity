@@ -1,0 +1,71 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class GameManager : MonoBehaviour
+{
+    int health, food, day, money;
+    public Text Health;
+    public Text Food;
+    public Text Day;
+    public Text Money;
+    public Text Death;
+    // Start is called before the first frame update
+    void Start()
+    {
+        health = 100;
+        food = 100;
+        day = 1;
+        money = 0;
+        UI();
+
+    }
+
+    void UI()
+    {
+        Death.text = "Your Objective is to survive";
+        if (health >= 1 || food >= 1)
+        {
+            Health.text = "Health: " + health;
+            Food.text = "Food: " + food;
+            Day.text = "Day: " + day;
+            Money.text = "Money: $" + money;
+           
+        }
+        if (health <= 0 || food <= 0)
+            Death.text = "You Die!!!";
+        if (money <= -1)
+            Death.text = "Not Enough money";
+
+        
+    }
+
+    public void ClickBegButton()
+    {
+        money = money + 2;
+        food = food - 5;
+        health = health - 2;
+        UI();
+    }
+    public void ClickEatFromGarbageButton()
+    {
+        food = food + 2;
+        health = health - 3;
+        UI();
+    }
+
+    public void ClickSleepOnStreetButton()
+    {
+        food = food - 30;
+        health = 100;
+        day = day + 1;
+        UI();
+    }
+
+    public void ClickSandwich()
+    {
+        food = food + 5;
+        money = money - 2;
+        UI();
+    }
