@@ -1,0 +1,23 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Example : MonoBehaviour
+{
+  public Text text;
+  public float timer;
+  
+  void Start()
+  {
+    text.text = timer.ToString();;
+  }
+  
+  void Update()
+  {
+    
+    if(time <= 0)
+    {
+      timer -= Time.deltaTime;
+      text.text = timer.ToString("#.00");
+    }
+  }
+}
