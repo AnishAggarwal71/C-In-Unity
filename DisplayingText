@@ -1,0 +1,12 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Example : MonoBehaviour
+{
+  public Text text;
+  
+  void Update()
+  {
+    text.text = "Hello World";
+  }
+}
