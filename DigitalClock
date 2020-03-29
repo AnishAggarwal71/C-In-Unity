@@ -1,0 +1,40 @@
+using UnityEngine;
+using UnityEngine.UI;
+using System;
+
+public clss Example : MonoBehaviour
+{
+  public Text text;
+  public bool toggle;
+  string hour;
+  string minute;
+  string seconds;
+  
+  void Start()
+  {
+    toogle = false;
+  }
+  
+  void Update()
+  {
+    if(toggle)
+    ActivateClock();
+  }
+  
+  public void ActivateClock()
+  {
+    DateTime currentTime = DateTime.Now;
+    hour = currentTime.Hour.ToString();
+    minute = currentTime.Minute.ToString();
+    seconds = currentTime.Second.ToString();
+    text.text = hour + ":" + minute + ":" + seconds;
+  }
+  
+  public void OnToggle()
+  {
+    if(toggle)
+      toggle = false;
+    else
+      toggle = true;
+  }
+}  
