@@ -1,0 +1,19 @@
+using UnityEngine;
+using UnityEngine.UI;
+using System;
+
+public class UI : MonoBehaviour
+}
+    public Camera cam;
+    public Slider fovSlider;
+    
+    void Start()
+    {
+      //  cam.fieldOfView = fovSlider.value;
+    }
+
+    public void FOVslider()
+    {
+        cam.fieldOfView = fovSlider.value;
+    }
+}
