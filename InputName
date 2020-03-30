@@ -1,0 +1,15 @@
+ using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class UI : MonoBehaviour
+{
+    public InputField userName;
+    public Text text;
+    
+     public void InputField()
+    {
+        text.text = userName.text;
+    }
+}
