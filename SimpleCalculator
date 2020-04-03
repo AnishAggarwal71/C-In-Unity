@@ -1,0 +1,36 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Calculator : MonoBehaviour
+{
+    public InputField inputField1;
+    public InputField inputField2;
+    public Text resultText;
+    float Num1 = float.Parse(inputField1.text);
+    float Num2 = float.Parse(inputField2.text);
+    
+    void Start()
+    {
+        resultText.text = "0";
+    }
+    
+    public void Add()
+    {
+        resultText.text = (Num1 + Num2).ToString();
+    }
+    
+    public void Subtract()
+    {
+        resultText.text = (Num1 - Num2).ToString();
+    }
+    
+    public void Multiply()
+    {
+        resultText.text = (Num1 * Num2).ToString();
+    }
+    
+    public void Divide()
+    {
+        resultText.text = (Num1 / Num2).ToString();
+    }
+}
