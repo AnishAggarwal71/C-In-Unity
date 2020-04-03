@@ -31,6 +31,6 @@ public class Calculator : MonoBehaviour
     
     public void Divide()
     {
-        resultText.text = (Num1 / Num2).ToString();
+        resultText.text = (Num1 / Num2).ToString("#.00");
     }
 }
